@@ -1,0 +1,39 @@
+{
+  "name": "morning-brief-bot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "İstanbul saatine göre günlük teknoloji, hava, referans kur ve Reddit özeti gönderen Telegram botu.",
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "dev": "tsx src/index.ts --dry-run",
+    "send": "tsx src/index.ts",
+    "dry-run": "tsx src/index.ts --dry-run",
+    "setup:telegram": "tsx src/setup-telegram.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "lint": "eslint .",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\" \"package.json\" \"tsconfig.json\" \"eslint.config.js\" \"prettier.config.js\" \"README.md\" \"docs/**/*.md\" \".github/**/*.yml\"",
+    "format:check": "prettier --check \"src/**/*.ts\" \"tests/**/*.ts\" \"package.json\" \"tsconfig.json\" \"eslint.config.js\" \"prettier.config.js\" \"README.md\" \"docs/**/*.md\" \".github/**/*.yml\"",
+    "check": "npm run typecheck && npm run lint && npm run test"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "openai": "^6.46.0",
+    "rss-parser": "^3.13.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.13.3",
+    "eslint": "^10.7.0",
+    "globals": "^16.5.0",
+    "prettier": "^3.9.5",
+    "tsx": "^4.23.1",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.64.0",
+    "vitest": "^4.1.10"
+  }
+}
